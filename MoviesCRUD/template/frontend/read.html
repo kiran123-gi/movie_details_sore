@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h2>Read Movies</h2>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Hero</th>
+                <th>Heroine</th>
+                <th>Director</th>
+                <th>Music</th>
+                <th>Year</th>
+            </tr>
+            {% for x in object1 %}
+            <tr>
+                <td>{{ x.name }}</td>
+                <td> {{ x.hero }}</td>
+                <td>{{ x.heroine }}</td>
+                <td> {{ x.director }}</td>
+                <td>{{ x.music }}</td>
+                <td>{{ x.year }} </td>
+                <td>
+                    <a href="{% url 'update' x.pk %}">Update</a>
+                    <a href="{% url 'delete' x.pk %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+</html>
